@@ -11,6 +11,7 @@ app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => res.render('index'))
 
+// Sirve archivos estáticos desde la carpeta 'public', ya no es necesario llegar hasta public
 app.use(express.static(join(__dirname, 'public')))
 
 app.listen(3000)
