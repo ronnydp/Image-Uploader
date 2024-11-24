@@ -16,10 +16,13 @@ span{
 #header {
     overflow: hidden;
 }
-.nav > li {
-    float: left;
+.nav-container{
+    border: 2px #121826;
+    height: 80px;
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
 }
-
 .nav li a{
     display: block;
     color: #121826;
@@ -36,7 +39,7 @@ span{
 }
 
 .drag-area{
-    border: 1px dashed #ddd;
+    border: 1px dashed #E5E7EB;
     height: 265px;
     width: 465px;
     border-radius: 5px;
@@ -51,20 +54,19 @@ span{
     border: 5px;
     height: 280px;
     width: 480px;
-    box-shadow: 1px 1px 20px rgb(163, 163, 172);
+    box-shadow: 2px 19px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .btn-custom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    border: 2px #4D5562;
-    border-radius: 5px;
-    background-color: white;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #E5E7EB;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .font-image{
@@ -73,4 +75,23 @@ span{
 
 .link-browse{
     color: rgb(29, 95, 180);
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #E5E7EB;
+}
+.div-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-button-theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+b{
+    margin-left: 15px;
 }
