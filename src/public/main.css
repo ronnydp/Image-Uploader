@@ -40,6 +40,7 @@ span{
 
 .drag-area{
     border: 1px dashed #E5E7EB;
+    color: #212936;
     height: 265px;
     width: 465px;
     border-radius: 5px;
@@ -73,9 +74,6 @@ span{
     font-size: 13px;
 }
 
-.link-browse{
-    color: rgb(29, 95, 180);
-}
 .nav{
     display: flex;
     justify-content: center;
@@ -92,15 +90,44 @@ span{
     justify-content: center;
     align-items: center;
 }
+
 b{
     margin-left: 15px;
+}
+
+.drag-text{
+    font-family: "Inter", serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #212936;
+}
+
+.link-browse{
+    font-family: "Inter", serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    color: #3662E3;
+}
+
+.img-text{
+    font-family: "Inter", serif;
+    font-size: 12px;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    margin-top: 10px;
 }
 
 /* Dark Mode */
 
 .dark-mode{
     background-color: #121826;
-    color: #E5E7EB;
+    color: #F9FAFB;
+}
+.dark-mode .drag-area{
+    border: 1px dashed #4D5562;
 }
 .dark-mode .drag-container{
     background-color: #212936;
@@ -110,4 +137,15 @@ b{
 }
 .dark-mode .btn-custom{
     background-color: #4D5562;
+}
+.dark-mode .drag-text{
+    color: #E5E7EB;
+    font-weight: 300;
+}
+.dark-mode .img-text{
+    font-weight: 120;
+    color: #E5E7EB;
+}
+.dark-mode .link-browse{
+    color: #3662E3;
 }

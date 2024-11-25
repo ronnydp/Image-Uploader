@@ -10,13 +10,15 @@
     <%- include(`partials/navigation`) %>
     <div class="container">
       <div class="drag-container">
-        <div class="drag-area">
+        <div id="dropArea" class="drag-area">
           <img src="/img/exit.svg" />
-          <a><strong>Drag & drop a file or </strong><strong class="link-browse">browse files</strong></a>
-          <span>JPG, PNG or GIF - Max file size 2MB</span>
+          <a class="drag-text">Drag & drop a file or <span class="link-browse">browse files</span></a>
+          <input type="file" id="input-file" hidden multiple>
+          <a class="img-text">JPG, PNG or GIF - Max file size 2MB</a>
         </div>
       </div>
     </div>
     <script src="/js/darkMode.js"></script>
+    <script src="/js/dropDrag.js"></script>
   </body>
 </html>
