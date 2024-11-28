@@ -94,6 +94,18 @@ form{
     align-items: center;
 }
 
+form input{
+    display: none;
+}
+
+form.dragover{
+    border-style: solid;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    background: #F9FAFBCC;
+}
+
 .drop-area{
     border: 1px dashed #E5E7EB;
     color: #212936;
@@ -122,9 +134,10 @@ form{
     font-optical-sizing: auto;
     font-weight: 600;
     color: #3662E3;
+    cursor: pointer;
 }
 
-.container .card .drop-area a{
+.container .card .drop-area .file-types{
     font-family: "Inter", serif;
     font-size: 12px;
     font-optical-sizing: auto;
