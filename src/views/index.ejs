@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Uploader</title>
+    <link rel="icon" type="image/ico" href="/img/exit.ico">
     <%- include(`partials/head`) %>
   </head>
   <body>
@@ -12,10 +13,18 @@
       <div class="card">
         <form action="" class="">
           <input class="input-file" type="file" hidden />
-          <div class="drop-area">
+          <div class="drop-area" id="drop-area">
             <img src="/img/exit.svg" />
-            <p class="inner">Drag & drop a file or <span class="select">browse files</span></p>
+            <p class="inner">
+              Drag & drop a file or <span class="select">browse files</span>
+            </p>
             <p class="file-types">JPG, PNG or GIF - Max file size 2MB</p>
+          </div>
+
+          <!-- Barra de Progreso -->
+          <div id="progress-container">
+            <div id="progress-bar"></div>
+            <div id="loading-bar"></div>
           </div>
         </form>
       </div>
@@ -23,5 +32,6 @@
 
     <script src="/js/darkMode.js"></script>
     <script src="/js/dropFile.js"></script>
+    <!-- <script src="/js/progressBar.js"></script> -->
   </body>
 </html>
