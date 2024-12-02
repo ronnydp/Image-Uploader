@@ -156,7 +156,6 @@ form.dragover{
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    display: none;
 }
 
 @keyframes loading{

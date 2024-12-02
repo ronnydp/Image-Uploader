@@ -6,40 +6,60 @@ const inputFile = document.querySelector(".input-file");
 const browse = document.querySelector(".select");
 const progressBar = document.getElementById("progress-bar");
 
-console.log(dropArea);
-
+// Para el boton Browse files
 browse.addEventListener("click", function () {
+  inputFile.removeEventListener("change", uploadImage);
+  inputFile.addEventListener("change", uploadImage);
   inputFile.click();
-  inputFile.addEventListener('change', uploadImage)
 });
 
+// Arrastrar y soltar la imagen
 form.addEventListener("dragover", (e) => {
   e.preventDefault();
 
   form.classList.add("dragover");
-  textInner.innerHTML = "Drop images here";
-  fileTypes.innerHTML = " ";
 });
 
 form.addEventListener("dragleave", (e) => {
   e.preventDefault();
 
   form.classList.remove("dragover");
-  textInner.innerHTML =
-    'Drag & drop a file or <span class="select">browse files</span>';
-  fileTypes.innerHTML = "JPG, PNG or GIF - Max file size 2MB";
 });
 
 form.addEventListener("drop", (e) => {
   e.preventDefault();
+  form.classList.remove("dragover");
   inputFile.files = e.dataTransfer.files;
   uploadImage();
-  form.classList.remove("dragover");
-})
+});
 
-function uploadImage(){
+// Mostrar o cargar la imagen en pantalla
+function uploadImage() {
+  const image = inputFile.files[0];
+
+  //Validar si hay archivos o no
+  if (!image) {
+    return;
+  }
+
+  // Validacion de si es una imagen o no
+  if (!image.type.includes("image")) {
+    alert("Only images are allowed!");
+    return false;
+  }
+
+  // Si la imagen excede los 2MB
+  if (image.size > 2_000_000) {
+    alert("Maximum upload size is 2MB!");
+    return false;
+  } else {
+    showImage();
+  }
+}
+
+function showImage() {
   let imglink = URL.createObjectURL(inputFile.files[0]);
-  dropArea.style.backgroundImage = `url(${imglink})`
+  dropArea.style.backgroundImage = `url(${imglink})`;
   dropArea.textContent = " ";
   dropArea.style.border = 0;
 }

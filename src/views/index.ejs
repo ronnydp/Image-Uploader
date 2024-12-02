@@ -12,7 +12,7 @@
     <div class="container">
       <div class="card">
         <form action="" class="">
-          <input class="input-file" type="file" hidden />
+          <input class="input-file" type="file" accept="image/*" hidden />
           <div class="drop-area" id="drop-area">
             <img src="/img/exit.svg" />
             <p class="inner">
@@ -22,7 +22,7 @@
           </div>
 
           <!-- Barra de Progreso -->
-          <div id="progress-container">
+          <div id="progress-container" hidden>
             <div id="progress-bar"></div>
             <div id="loading-bar"></div>
           </div>
@@ -33,5 +33,6 @@
     <script src="/js/darkMode.js"></script>
     <script src="/js/dropFile.js"></script>
     <!-- <script src="/js/progressBar.js"></script> -->
+    <!-- <script src="/js/validations.js"></script> -->
   </body>
 </html>
