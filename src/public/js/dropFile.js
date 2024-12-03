@@ -17,6 +17,9 @@ form.addEventListener("dragover", (e) => {
   e.preventDefault();
 
   form.classList.add("dragover");
+  // const image = inputFile.files[0];
+  // const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+  // console.log(acceptedImageTypes.includes(image.type));
 });
 
 form.addEventListener("dragleave", (e) => {
@@ -42,7 +45,9 @@ function uploadImage() {
   }
 
   // Validacion de si es una imagen o no
-  if (!image.type.includes(".jpg, .png, .gif")) {
+  const acceptedImageTypes = ["image/jpeg", "image/png", "image/gif"];
+
+  if (!acceptedImageTypes.includes(image.type)) {
     alert("JPG, PNG or GIF");
     return false;
   }

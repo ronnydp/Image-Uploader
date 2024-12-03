@@ -136,6 +136,7 @@ form.dragover{
     font-weight: 600;
     color: #E5E7EB;
     background: #F9FAFBCC;
+    border-radius: 15px;
 }
 
 .drop-area{
