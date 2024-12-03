@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Uploader</title>
-    <link rel="icon" type="image/ico" href="/img/exit.ico">
+    <link rel="icon" type="image/ico" href="/img/exit.ico" />
     <%- include(`partials/head`) %>
   </head>
   <body>
     <%- include(`partials/navigation`) %>
     <div class="container">
-      <div class="card">
+      <div class="card-img">
         <form action="" class="">
           <input class="input-file" type="file" accept="image/*" hidden />
           <div class="drop-area" id="drop-area">
@@ -20,13 +20,19 @@
             </p>
             <p class="file-types">JPG, PNG or GIF - Max file size 2MB</p>
           </div>
-
-          <!-- Barra de Progreso -->
-          <div id="progress-container" hidden>
-            <div id="progress-bar"></div>
-            <div id="loading-bar"></div>
-          </div>
         </form>
+      </div>
+      <div class="card-load">
+        <!-- Barra de Progreso -->
+        <p><strong>Uploading</strong>, please wait...</p>
+        <div id="progress-container">
+          <div id="progress-bar"></div>
+          <div id="loading-bar"></div>
+        </div>
+      </div>
+      <div class="container-buttons">
+        <button><img src="/img/Link.svg" />Share</button>
+        <button><img src="/img/download.svg" />Download</button>
       </div>
     </div>
 

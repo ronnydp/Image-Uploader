@@ -8,7 +8,6 @@ const progressBar = document.getElementById("progress-bar");
 
 // Para el boton Browse files
 browse.addEventListener("click", function () {
-  inputFile.removeEventListener("change", uploadImage);
   inputFile.addEventListener("change", uploadImage);
   inputFile.click();
 });
@@ -43,8 +42,8 @@ function uploadImage() {
   }
 
   // Validacion de si es una imagen o no
-  if (!image.type.includes("image")) {
-    alert("Only images are allowed!");
+  if (!image.type.includes(".jpg, .png, .gif")) {
+    alert("JPG, PNG or GIF");
     return false;
   }
 
