@@ -22,9 +22,6 @@ form.addEventListener("dragover", (e) => {
   e.preventDefault();
 
   form.classList.add("dragover");
-  // const image = inputFile.files[0];
-  // const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-  // console.log(acceptedImageTypes.includes(image.type));
 });
 
 form.addEventListener("dragleave", (e) => {
@@ -44,12 +41,12 @@ form.addEventListener("drop", (e) => {
 async function uploadImage() {
   const image = inputFile.files[0];
 
-  //Vaolidar si hay archivos  no
+  //Validar si hay archivos o no
   if (!image) {
     return;
   }
 
-  // Validacion de si es una imagen o no
+  // Validacion imagen o no
   const acceptedImageTypes = ["image/jpeg", "image/png", "image/gif"];
 
   if (!acceptedImageTypes.includes(image.type)) {
@@ -94,10 +91,9 @@ async function uploadImage() {
       const downloadLink = document.getElementById("downloadLink");
 
       showImage(data.imageUrl);
-      // shareButton.addEventListener('click', shareLink(data.imageUrl));
-      shareButton.addEventListener('click', () => shareLink(data.imageUrl)); //funcion anonima o de flecha
+      shareButton.addEventListener("click", () => shareLink(data.imageUrl)); //funcion anonima o de flecha
       downloadLink.href = data.imageUrl; // Obtiene la URL de la imagen y lo envía al elemento html
-    }, 2000); //Cambia 2000 por el tiempo en milisegundos que desees (2 segundos en este caso)
+    }, 2000);
   } catch (error) {
     console.log("Error uploading image", error);
   }
