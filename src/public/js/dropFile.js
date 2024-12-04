@@ -8,6 +8,7 @@ const progressBar = document.getElementById("progress-bar");
 const cardLoad = document.querySelector(".card-load");
 const cardImg = document.querySelector(".card-img");
 const buttons = document.querySelector(".container-buttons");
+const shareButton = document.getElementById("shareButton");
 let lastSelectedFileName = "";
 
 // Para el boton Browse files
@@ -43,7 +44,7 @@ form.addEventListener("drop", (e) => {
 async function uploadImage() {
   const image = inputFile.files[0];
 
-  //Validar si hay archivos o no
+  //Vaolidar si hay archivos  no
   if (!image) {
     return;
   }
@@ -64,16 +65,13 @@ async function uploadImage() {
 
   // Validar cantidad de imagenes
   if (lastSelectedFileName && lastSelectedFileName !== image.name) {
-    console.log(image.name);
-    console.log(lastSelectedFileName);
     lastSelectedFileName = " ";
     console.log(lastSelectedFileName);
 
     alert("Only upload an image at a time");
     return;
   }
-  console.log(image.name);
-  console.log(lastSelectedFileName);
+
   lastSelectedFileName = image.name;
 
   cardLoad.style.display = "flex";
@@ -91,8 +89,14 @@ async function uploadImage() {
       cardLoad.style.display = "none";
       cardImg.style.display = "flex";
       buttons.style.display = "flex";
+
       const data = await response.json();
+      const downloadLink = document.getElementById("downloadLink");
+
       showImage(data.imageUrl);
+      // shareButton.addEventListener('click', shareLink(data.imageUrl));
+      shareButton.addEventListener('click', () => shareLink(data.imageUrl)); //funcion anonima o de flecha
+      downloadLink.href = data.imageUrl; // Obtiene la URL de la imagen y lo envía al elemento html
     }, 2000); //Cambia 2000 por el tiempo en milisegundos que desees (2 segundos en este caso)
   } catch (error) {
     console.log("Error uploading image", error);
@@ -103,4 +107,22 @@ function showImage(imageUrl) {
   dropArea.style.backgroundImage = `url('http://localhost:3000${imageUrl}')`;
   dropArea.textContent = " ";
   dropArea.style.border = 0;
+}
+
+// Compartir el link de la imagen subida
+function shareLink(imageUrl) {
+  const Url = `http://localhost:3000${imageUrl}`; // obtiene la url de la imagen
+
+  // usa la API del portapapeles para copiar la url com promesas
+  navigator.clipboard
+    .writeText(Url)
+    .then(() => {
+      // maneja el caso exitoso
+      alert("URL copied to clipboard: " + Url);
+    })
+    .catch((err) => {
+      // maneja el caso si hay error
+      console.error("Error al copiar la URL: ", err);
+      alert("Error al copiar la URL");
+    });
 }
