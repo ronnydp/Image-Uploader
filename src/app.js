@@ -3,6 +3,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
 import multer from "multer";
+import { PORT } from "./config.js";
 
 const app = express();
 
@@ -50,5 +51,5 @@ app.get("/download/:filename", (req, res) => {
   });
 });
 
-app.listen(3000);
-console.log("Server is listening on port ", 3000);
+app.listen(PORT);
+console.log("Server on port ", PORT);
