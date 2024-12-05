@@ -1,4 +1,3 @@
-const BASE_URL = 'https://image-uploader-flame-one.vercel.app';
 const dropArea = document.getElementById("drop-area");
 const form = document.querySelector("form");
 const inputFile = document.querySelector(".input-file");
@@ -97,14 +96,14 @@ async function uploadImage() {
 }
 
 function showImage(imageUrl) {
-  dropArea.style.backgroundImage = `url('${BASE_URL}${imageUrl}')`;
+  dropArea.style.backgroundImage = `url('https://image-uploader-flame-one.vercel.app${imageUrl}')`;
   dropArea.textContent = " ";
   dropArea.style.border = 0;
 }
 
 // Compartir el link de la imagen subida
 function shareLink(imageUrl) {
-  const Url = `${BASE_URL}${imageUrl}`; // obtiene la url de la imagen
+  const Url = `https://image-uploader-flame-one.vercel.app${imageUrl}`; // obtiene la url de la imagen
 
   // usa la API del portapapeles para copiar la url com promesas
   navigator.clipboard
