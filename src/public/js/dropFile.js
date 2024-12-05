@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://image-uploader-flame-one.vercel.app';
 const dropArea = document.getElementById("drop-area");
 const form = document.querySelector("form");
 const inputFile = document.querySelector(".input-file");
