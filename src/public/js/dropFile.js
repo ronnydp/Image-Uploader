@@ -96,14 +96,14 @@ async function uploadImage() {
 }
 
 function showImage(imageUrl) {
-  dropArea.style.backgroundImage = `url('https://image-uploader-flame-one.vercel.app${imageUrl}')`;
+  dropArea.style.backgroundImage = `url('image-uploader-production-e6cb.up.railway.app${imageUrl}')`;
   dropArea.textContent = " ";
   dropArea.style.border = 0;
 }
 
 // Compartir el link de la imagen subida
 function shareLink(imageUrl) {
-  const Url = `https://image-uploader-flame-one.vercel.app${imageUrl}`; // obtiene la url de la imagen
+  const Url = `image-uploader-production-e6cb.up.railway.app${imageUrl}`; // obtiene la url de la imagen
 
   // usa la API del portapapeles para copiar la url com promesas
   navigator.clipboard
