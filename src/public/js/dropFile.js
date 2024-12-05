@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../config.js";
+const { BASE_URL } = require("../../config.js");
 
 const dropArea = document.getElementById("drop-area");
 const form = document.querySelector("form");
