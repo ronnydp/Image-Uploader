@@ -1,12 +1,8 @@
-const { BASE_URL } = require("../../config.js");
-
+const BASE_URL = 'http://localhost:3000';
 const dropArea = document.getElementById("drop-area");
 const form = document.querySelector("form");
-const textInner = document.querySelector(".inner");
-const fileTypes = document.querySelector(".file-types");
 const inputFile = document.querySelector(".input-file");
 const browse = document.querySelector(".select");
-const progressBar = document.getElementById("progress-bar");
 const cardLoad = document.querySelector(".card-load");
 const cardImg = document.querySelector(".card-img");
 const buttons = document.querySelector(".container-buttons");
@@ -65,7 +61,6 @@ async function uploadImage() {
   // Validar cantidad de imagenes
   if (lastSelectedFileName && lastSelectedFileName !== image.name) {
     lastSelectedFileName = " ";
-    console.log(lastSelectedFileName);
 
     alert("Only upload an image at a time");
     return;
